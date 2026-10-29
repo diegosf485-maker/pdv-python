@@ -21,8 +21,11 @@ Exemplos de teste
 
 Valor da compra| Idade| Desconto total| Total a pagar
 R$ 50,00| 30| R$ 0,00| R$ 50,00
+
 R$ 150,00| 30| R$ 15,00| R$ 135,00
+
 R$ 200,00| 70| R$ 56,00| R$ 144,00
+
 R$ 80,00| 70| R$ 16,00| R$ 64,00
 
 Os exemplos demonstram o funcionamento das regras de desconto implementadas no código.
