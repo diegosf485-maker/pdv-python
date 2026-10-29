@@ -24,10 +24,10 @@ python pdv.py
 
 Tabela de exemplos
 
-Valor original| Idade| Desconto por idade| Desconto por valor| Desconto total| Valor final
-R$ 125,00| 70| R$ 25,00| R$ 10,00| R$ 35,00| R$ 90,00
-R$ 200,00| 64| R$ 0,00| R$ 20,00| R$ 20,00| R$ 180,00
-R$ 101,00| 30| R$ 0,00| R$ 10,10| R$ 10,10| R$ 90,90
+Valor original | Idade| Desconto por idade| Desconto por valor| Desconto total| Valor final
+R$ 125,00 | 70| R$ 25,00| R$ 10,00| R$ 35,00| R$ 90,00
+R$ 200,00 | 64| R$ 0,00| R$ 20,00| R$ 20,00| R$ 180,00
+R$ 101,00 | 30| R$ 0,00| R$ 10,10| R$ 10,10| R$ 90,90
 
 Observação: os descontos são aplicados sucessivamente. O desconto por valor é calculado sobre o valor restante após o desconto por idade.
 
