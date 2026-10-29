@@ -1,55 +1,58 @@
 
 PDV com Descontos 
 
+PDV com Descontos
+
 O que o código faz
 
-O PDV (Ponto de Venda) é um programa desenvolvido em Python que calcula descontos de acordo com a idade do cliente e o valor da compra. O programa registra as compras em uma lista, apresenta os valores de cada operação e, ao final, exibe um resumo geral.
+O PDV (Ponto de Venda) é um programa desenvolvido em Python que calcula descontos com base na idade do cliente e no valor da compra. O sistema registra as compras realizadas, apresenta os valores calculados e gera um resumo geral ao final da execução.
 
 Como funciona
 
 1. Solicita o valor da compra.
 2. Encerra o programa quando o usuário digita 0.
-3. Verifica se o valor da compra é negativo. Se for, exibe uma mensagem de erro e solicita uma nova entrada.
-4. Solicita a idade do cliente e verifica se ela é válida.
-5. Aplica desconto de 20% para clientes com 65 anos ou mais.
-6. Aplica um desconto adicional de 10% quando o valor restante após o primeiro desconto é superior a R$ 100,00.
+3. Verifica se o valor da compra é negativo.
+4. Solicita a idade do cliente e verifica se é válida.
+5. Calcula o desconto por idade.
+6. Calcula o desconto por valor da compra.
 7. Exibe o valor original, os descontos aplicados e o total a pagar.
-8. Armazena os dados de cada compra na lista "historico".
-9. Ao encerrar, apresenta a quantidade de compras, o valor total das compras, o total de descontos, o total arrecadado e o histórico das operações.
+8. Armazena os dados das compras em uma lista.
+9. Apresenta o histórico e o resumo geral ao encerrar.
+
+Regras de desconto
+
+- Desconto por idade: aplica 20% para clientes com 65 anos ou mais.
+- Desconto por valor da compra: aplica 10% adicional quando o valor após o desconto por idade é superior a R$ 100,00.
 
 Exemplos de teste
 
-Valor da compra| Idade| Desconto total| Total a pagar
-R$ 50,00| 30| R$ 0,00| R$ 50,00
+Valor da compra| Idade| Desconto por idade| Desconto por valor| Total a pagar
+R$ 50,00| 30| R$ 0,00| R$ 0,00| R$ 50,00
 
-R$ 150,00| 30| R$ 15,00| R$ 135,00
+R$ 150,00| 30| R$ 0,00| R$ 15,00| R$ 135,00
 
-R$ 200,00| 70| R$ 56,00| R$ 144,00
+R$ 200,00| 70| R$ 40,00| R$ 16,00| R$ 144,00
 
-R$ 80,00| 70| R$ 16,00| R$ 64,00
-
-Os exemplos demonstram o funcionamento das regras de desconto implementadas no código.
+R$ 80,00| 70| R$ 16,00| R$ 0,00| R$ 64,00
 
 Validações
 
-- Valores negativos são rejeitados.
-- Idades negativas são rejeitadas.
-- Entradas não numéricas exibem uma mensagem de erro.
-- O programa continua executando até que o usuário digite 0 para encerrar.
+- Rejeita valores negativos.
+- Rejeita idades negativas.
+- Exibe uma mensagem de erro para entradas não numéricas.
+- Continua executando até o usuário digitar 0.
 
 Como executar
 
 É necessário ter o Python instalado.
 
-Execute o comando:
-
 python pdv.py
 
 Arquivos do projeto
 
-- "pdv.py": contém o código-fonte do programa.
-- "README.md": apresenta a documentação, as regras de funcionamento e os exemplos de teste.
+- "pdv.py": código-fonte do programa.
+- "README.md": documentação do projeto.
 
 Objetivo
 
-Praticar lógica de programação, estruturas condicionais, laços de repetição, listas, validação de dados e cálculos financeiros.
+Praticar lógica de programação, condicionais, laços de repetição, listas, validação de dados e cálculos financeiros.
