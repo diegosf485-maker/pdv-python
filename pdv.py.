@@ -1,60 +1,61 @@
 
 # PDV com descontos em Python
 
+
 compras = []
 
 while True:
-    valor = float(input("Digite o valor da compra (0 para encerrar): ").replace(",", "."))
+    try:
+        valor = float(input("Valor da compra (0 para encerrar): ").replace(",", "."))
+    except ValueError:
+        print("Aviso: digite um valor valido.")
+        continue
 
     if valor == 0:
         break
 
     if valor < 0:
-        print("Aviso: o valor da compra não pode ser negativo. Tente novamente.")
+        print("Aviso: valor nao pode ser negativo.")
         continue
 
-    idade = int(input("Digite a idade do cliente: "))
+    while True:
+        try:
+            idade = int(input("Idade do cliente: "))
+            if idade < 0:
+                print("Aviso: idade nao pode ser negativa.")
+                continue
+            break
+        except ValueError:
+            print("Aviso: digite uma idade valida.")
 
-    if idade < 0:
-        print("Aviso: a idade não pode ser negativa. Tente novamente.")
-        continue
-
-    valor_original = valor
-    desconto = 0
+    original = valor
+    desconto_idade = 0
+    desconto_valor = 0
 
     if idade >= 65:
         desconto_idade = valor * 0.20
         valor -= desconto_idade
-        desconto += desconto_idade
 
-    if valor > 100:
-        desconto_extra = valor * 0.10
-        valor -= desconto_extra
-        desconto += desconto_extra
+    if original >= 200:
+        desconto_valor = valor * 0.10
+        valor -= desconto_valor
+
+    desconto_total = original - valor
 
     compras.append({
-        "original": valor_original,
-        "desconto": desconto,
+        "original": original,
+        "desconto": desconto_total,
         "final": valor
     })
 
-    print(f"Valor original: R$ {valor_original:.2f}")
-    print(f"Desconto: R$ {desconto:.2f}")
+    print(f"Valor original: R$ {original:.2f}")
+    print(f"Desconto idade: R$ {desconto_idade:.2f}")
+    print(f"Desconto valor: R$ {desconto_valor:.2f}")
     print(f"Valor final: R$ {valor:.2f}")
-    print("-" * 30)
-
-total_bruto = 0
-total_descontos = 0
-total_final = 0
-
-for compra in compras:
-    total_bruto += compra["original"]
-    total_descontos += compra["desconto"]
-    total_final += compra["final"]
 
 print("\n===== RESUMO DAS COMPRAS =====")
-print(f"Quantidade de compras: {len(compras)}")
-print(f"Total bruto: R$ {total_bruto:.2f}")
-print(f"Total de descontos: R$ {total_descontos:.2f}")
-print(f"Total final: R$ {total_final:.2f}")
-print("Fim do programa!")
+print(f"Quantidade: {len(compras)}")
+print(f"Total bruto: R$ {sum(c['original'] for c in compras):.2f}")
+print(f"Total descontos: R$ {sum(c['desconto'] for c in compras):.2f}")
+print(f"Total final: R$ {sum(c['final'] for c in compras):.2f}")
+
