@@ -27,6 +27,7 @@ Regras de desconto
 Exemplos de teste
 
 Valor da compra| Idade| Desconto por idade| Desconto por valor| Total a pagar
+
 R$ 50,00| 30| R$ 0,00| R$ 0,00| R$ 50,00
 
 R$ 150,00| 30| R$ 0,00| R$ 15,00| R$ 135,00
