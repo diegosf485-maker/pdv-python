@@ -1,0 +1,60 @@
+
+# PDV com descontos em Python
+
+compras = []
+
+while True:
+    valor = float(input("Digite o valor da compra (0 para encerrar): ").replace(",", "."))
+
+    if valor == 0:
+        break
+
+    if valor < 0:
+        print("Aviso: o valor da compra não pode ser negativo. Tente novamente.")
+        continue
+
+    idade = int(input("Digite a idade do cliente: "))
+
+    if idade < 0:
+        print("Aviso: a idade não pode ser negativa. Tente novamente.")
+        continue
+
+    valor_original = valor
+    desconto = 0
+
+    if idade >= 65:
+        desconto_idade = valor * 0.20
+        valor -= desconto_idade
+        desconto += desconto_idade
+
+    if valor > 100:
+        desconto_extra = valor * 0.10
+        valor -= desconto_extra
+        desconto += desconto_extra
+
+    compras.append({
+        "original": valor_original,
+        "desconto": desconto,
+        "final": valor
+    })
+
+    print(f"Valor original: R$ {valor_original:.2f}")
+    print(f"Desconto: R$ {desconto:.2f}")
+    print(f"Valor final: R$ {valor:.2f}")
+    print("-" * 30)
+
+total_bruto = 0
+total_descontos = 0
+total_final = 0
+
+for compra in compras:
+    total_bruto += compra["original"]
+    total_descontos += compra["desconto"]
+    total_final += compra["final"]
+
+print("\n===== RESUMO DAS COMPRAS =====")
+print(f"Quantidade de compras: {len(compras)}")
+print(f"Total bruto: R$ {total_bruto:.2f}")
+print(f"Total de descontos: R$ {total_descontos:.2f}")
+print(f"Total final: R$ {total_final:.2f}")
+print("Fim do programa!")
