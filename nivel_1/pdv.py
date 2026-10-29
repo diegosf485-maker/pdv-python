@@ -1,7 +1,6 @@
 # PDV com descontos em Python
 
 
-
 historico = []
 
 while True:
